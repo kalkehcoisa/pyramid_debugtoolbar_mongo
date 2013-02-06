@@ -1,0 +1,190 @@
+<h4>Queries</h4>
+<table id="pMongoTableQueries">
+	<thead>
+		<tr>
+			<th>Time&nbsp;(ms)</th>
+			<th>Operation</th>
+			<th>Collection</th>
+			<th>Query</th>
+			<th>Skip</th>
+			<th>Limit</th>
+			<th>Stacktrace</th>
+		</tr>
+	</thead>
+    <tbody>
+    % for i, query in enumerate(queries):
+        <tr class="${i%2 and 'pDebugEven' or 'pDebugOdd'}">
+            <td>${'%.4f' % query['time']}</td>
+            <td>${query['operation']}</td>
+            <td>${query['collection']}</td>
+            <td>
+                % if query['query']:
+                    ${query['query']}
+                % endif
+            </td>
+            <td>
+                % if query['ordering']:
+                    ${query['ordering']}
+                % endif
+            </td>
+            <td colspan="8">
+                <table class="pDebugMongoStackTrace" id="pMongoQueriesStackTrace-${i}">
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>File</th>
+                            <th>Function</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    % for line in query['stack_trace']:
+                        <tr>
+                            <td class="lineno">${line[1]}</td>
+                            <td class="file">${line[0]}</td>
+                            <td class="function">${line[2]}</td>
+                            <td class="code">${line[3]}</td>
+                        </tr>
+                    % endfor
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    % endfor
+    </tbody>
+</table>
+
+<h4>Inserts</h4>
+<table class="pMongoTableInserts">
+    <thead>
+        <tr>
+            <th>Time (ms)</th>
+            <th>Document</th>
+            <th>Safe</th>
+            <th>Stack Trace</th>
+        </tr>
+    </thead>
+    <tbody>
+     % for i, insert in enumerate(inserts):
+        <tr class="${i%2 and 'pDebugEven' or 'pDebugOdd'}">
+            <td>${'%.4f' % insert['time']}</td>
+            <td>${insert['document']}</td>
+            <td>${insert['safe']}</td>
+            <td colspan="8">
+                <table class="pDebugMongoStackTrace" id="pMongoInsertsStackTrace-${i}">
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>File</th>
+                            <th>Function</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    % for line in insert['stack_trace']:
+                        <tr>
+                            <td class="lineno">${line[1]}</td>
+                            <td class="file">${line[0]}</td>
+                            <td class="function">${line[2]}</td>
+                            <td class="code">${line[3]}</td>
+                        </tr>
+                    % endfor
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        % endfor
+    </tbody>
+</table>
+
+<h4>Removes</h4>
+<table class="pMongoTableRemoves">
+    <thead>
+        <tr>
+            <th>Time (ms)</th>
+            <th>Query</th>
+            <th>Safe</th>
+            <th>Stack Trace</th>
+        </tr>
+    </thead>
+    <tbody>
+     % for i, remove in enumerate(removes):
+        <tr class="${i%2 and 'pDebugEven' or 'pDebugOdd'}">
+            <td>${'%.4f' % remove['time']}</td>
+            <td>${remove['spec_or_id']}</td>
+            <td>${remove['safe']}</td>
+            <td colspan="8">
+                <table class="pDebugMongoStackTrace" id="pMongoRemovesStackTrace-${i}">
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>File</th>
+                            <th>Function</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    % for line in remove['stack_trace']:
+                        <tr>
+                            <td class="lineno">${line[1]}</td>
+                            <td class="file">${line[0]}</td>
+                            <td class="function">${line[2]}</td>
+                            <td class="code">${line[3]}</td>
+                        </tr>
+                    % endfor
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        % endfor
+    </tbody>
+</table>
+
+<h4>Updates</h4>
+<table class="pMongoTableUpdates">
+    <thead>
+        <tr>
+            <th>Time (ms)</th>
+            <th>Query</th>
+            <th>Update</th>
+            <th>Safe</th>
+            <th>Multi</th>
+            <th>Upsert</th>
+            <th>Stack Trace</th>
+        </tr>
+    </thead>
+    <tbody>
+     % for i, update in enumerate(updates):
+        <tr class="${i%2 and 'pDebugEven' or 'pDebugOdd'}">
+            <td>${'%.4f' % update['time']}</td>
+            <td>${update['spec']}</td>
+            <td>${update['document']}</td>
+            <td>${update['safe']}</td>
+            <td>${update['multi']}</td>
+            <td>${update['upsert']}</td>
+            <td colspan="8">
+                <table class="pDebugMongoStackTrace" id="pMongoUpdatesStackTrace-${i}">
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>File</th>
+                            <th>Function</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    % for line in remove['stack_trace']:
+                        <tr>
+                            <td class="lineno">${line[1]}</td>
+                            <td class="file">${line[0]}</td>
+                            <td class="function">${line[2]}</td>
+                            <td class="code">${line[3]}</td>
+                        </tr>
+                    % endfor
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        % endfor
+    </tbody>
+</table>
