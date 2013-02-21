@@ -1,13 +1,18 @@
 # coding=utf-8
-from distutils.core import setup
+import os
+from setuptools import setup, find_packages
+
+here = os.path.abspath(os.path.dirname(__file__))
+try:
+    README = open(os.path.join(here, 'README.rst')).read()
+except IOError:
+    README = ''
+
 
 setup(
     name='pyramid_debugtoolbar_mongo',
-    version='0.1.0',
-    packages=[
-        'pyramid_debugtoolbar_mongo',
-        'pyramid_debugtoolbar_mongo.panels'
-    ],
+    version='0.1.1',
+    packages=find_packages(),
     requires=[
         'pyramid_debugtoolbar (>=1.0.4)'
     ],
@@ -16,7 +21,7 @@ setup(
     author='Gilles Devaux',
     author_email='gilles.devaux@gmail.com',
     description='Pyramid debugtoolbar extension for mongo',
-    long_description=open('README.rst').read(),
+    long_description=README,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Pyramid',
