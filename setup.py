@@ -8,10 +8,9 @@ try:
 except IOError:
     README = ''
 
-
 setup(
     name='pyramid_debugtoolbar_mongo',
-    version='0.1.1',
+    version='0.1.2',
     packages=find_packages(),
     requires=[
         'pyramid_debugtoolbar (>=1.0.4)'
@@ -22,6 +21,9 @@ setup(
     author_email='gilles.devaux@gmail.com',
     description='Pyramid debugtoolbar extension for mongo',
     long_description=README,
+    include_package_data=True,
+    zip_safe=False,
+    package_data={'pyramid_debugtoolbar_mongo': ['panels/templates/*']},
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Pyramid',
