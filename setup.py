@@ -2,14 +2,14 @@
 from distutils.core import setup
 
 setup(
-    name='pyramid-debugtoolbar-mongo',
+    name='pyramid_debugtoolbar_mongo',
     version='0.1.0',
     packages=[
         'pyramid_debugtoolbar_mongo',
         'pyramid_debugtoolbar_mongo.panels'
     ],
     requires=[
-        'pyramid-debugtoolbar (>=1.0.4)'
+        'pyramid_debugtoolbar (>=1.0.4)'
     ],
     url='https://github.com/gilles/pyramid_debugtoolbar_mongo',
     license='MIT',
