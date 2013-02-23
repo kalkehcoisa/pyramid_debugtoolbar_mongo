@@ -10,7 +10,7 @@ except IOError:
 
 setup(
     name='pyramid_debugtoolbar_mongo',
-    version='0.1.2',
+    version='0.1.3',
     packages=find_packages(),
     requires=[
         'pyramid_debugtoolbar (>=1.0.4)'
