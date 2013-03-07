@@ -23,7 +23,7 @@
                 % endif
             </td>
             <td>
-                % if query['ordering']:
+                % if 'ordering' in query:
                     ${query['ordering']}
                 % endif
             </td>
