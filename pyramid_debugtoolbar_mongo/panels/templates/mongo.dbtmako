@@ -173,7 +173,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    % for line in remove['stack_trace']:
+                    % for line in update['stack_trace']:
                         <tr>
                             <td class="lineno">${line[1]}</td>
                             <td class="file">${line[0]}</td>
