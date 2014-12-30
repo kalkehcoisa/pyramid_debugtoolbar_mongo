@@ -32,6 +32,7 @@ def _get_stacktrace():
     if request is not None:
         get_trace = request.registry.settings['debugtoolbarmongo.stacktrace']
     if get_trace:
+        __traceback_hide__ = True
         try:
             stack = inspect.stack()
         except IndexError:
@@ -58,6 +59,7 @@ def _insert(collection_self, doc_or_docs, manipulate=True,
     )
     total_time = (time.time() - start_time) * 1000
 
+    __traceback_hide__ = True
     inserts.append({
         'document': doc_or_docs,
         'safe': safe,
@@ -83,6 +85,7 @@ def _update(collection_self, spec, document, upsert=False,
     )
     total_time = (time.time() - start_time) * 1000
 
+    __traceback_hide__ = True
     updates.append({
         'document': document,
         'upsert': upsert,
@@ -137,6 +140,7 @@ def _cursor_refresh(cursor_self):
 
     query_son = privar('query_spec')()
 
+    __traceback_hide__ = True
     query_data = {
         'time': total_time,
         'operation': 'query',
