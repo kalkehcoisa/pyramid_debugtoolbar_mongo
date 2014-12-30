@@ -12,7 +12,9 @@ for the Pyramid Debug Toolbar (https://github.com/Pylons/pyramid_debugtoolbar)
 
 Setup
 =====
-Add the following lines to your paster config file::
+Add the following lines to your paster config file:
+
+.. code-block:: ini
 
     pyramid.includes =
         ...
@@ -37,7 +39,9 @@ Add the following lines to your paster config file::
 An extra panel titled "MongoDB" should appear in your debug toolbar.
 
 Obtaining stack traces can slow down queries significantly. To turn them off
-add the following lines to your paster config file::
+add the following lines to your paster config file:
+
+.. code-block:: python
 
     debugtoolbarmongo.stacktrace = false
 
