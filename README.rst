@@ -1,6 +1,11 @@
 ===================================
 Pyramid Debug Toolbar MongoDB Panel
 ===================================
+.. image:: https://travis-ci.org/gilles/pyramid_debugtoolbar_mongo.png?branch=master
+           :target: https://travis-ci.org/gilles/pyramid_debugtoolbar_mongo
+
+.. image:: https://img.shields.io/pypi/v/pyramid_debugtoolbar_mongo.svg
+           :target: https://pypi.python.org/pypi/pyramid_debugtoolbar_mongo
 
 
 An extension panel for Pyramid Debug Toolbar that adds
