@@ -1,6 +1,6 @@
-==================================
+===================================
 Pyramid Debug Toolbar MongoDB Panel
-==================================
+===================================
 
 
 An extension panel for Pyramid Debug Toolbar that adds
@@ -9,8 +9,6 @@ MongoDB debugging information
 This is a clone of https://github.com/hmarr/django-debug-toolbar-mongo
 for the Pyramid Debug Toolbar (https://github.com/Pylons/pyramid_debugtoolbar)
 
-
-Author: Gilles Devaux (http://github.com/gilles)
 
 Setup
 =====

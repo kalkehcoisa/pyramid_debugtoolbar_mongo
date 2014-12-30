@@ -1,12 +1,4 @@
 # coding=utf-8
-"""
-Copyright 2012, Kwarter Inc.
-
-All rights reserved.
-
-TODO Docstring
-
-"""
 from pyramid.settings import asbool
 
 __author__ = 'gillesdevaux'

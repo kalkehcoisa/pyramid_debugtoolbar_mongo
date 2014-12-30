@@ -10,10 +10,10 @@ except IOError:
 
 setup(
     name='pyramid_debugtoolbar_mongo',
-    version='0.1.5',
+    version='0.2.0',
     packages=find_packages(),
     requires=[
-        'pyramid_debugtoolbar (>=1.0.4)'
+        'pyramid_debugtoolbar (>=2.0)'
     ],
     url='https://github.com/gilles/pyramid_debugtoolbar_mongo',
     license='MIT',
